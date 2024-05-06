@@ -5,16 +5,16 @@ int factorial (int n){
     while (n > 1) {
         i = i * n;
         int n = n - 1; //no es necesario definirla de nuevo, solo se asigna
-    } 
-//}                     esta llave esta mal 
+    }  
     return i;
-}                       //esta llave cierra la funcion factorial
+}                       
 
-//int main (int argc, char *argv||){ sintaxis de argv es *argv[]
-int main (int argc, char *argv[]){
-    int fac4 = factorial(4);
-    int fac5 = factorial(5);
-    printf("4! = %d, 5! = %d\n", fac4, fac5);
+int main() {
+    int n;
+    printf("Ingrese un numero para calcular su factorial: "); 
+    scanf("%d", &n); //guarda los datos ingresados por el usuario
 
+    int resultado = factorial(n); //se guarda el resultado de la funcion en la variable
+    printf("%d! = %d\n", n, resultado);
     return 0;
 }
