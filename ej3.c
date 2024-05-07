@@ -60,4 +60,9 @@ int main() {
         }
         printf("\n");
     }
+
+    int CuadradoMasGrande = encuentraCuadradoMasGrande(matrix, n);
+    printf("El tamaño del cuadrado más grande de unos es: %d\n", CuadradoMasGrande);
+   
+    return 0;
 }
