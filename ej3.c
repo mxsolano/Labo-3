@@ -12,3 +12,31 @@ int min(int a, int b, int c) { //encuentra el  valor minimo ie:ceros adyacentes 
     if (c < min) min = c;
     return min;
 }
+
+int encuentraCuadradoMasGrande(int matrix[][MAX_SIZE], int n) { 
+    int dp[MAX_SIZE][MAX_SIZE]; 
+    int CuadradoMaximo = 0;
+
+    // copia las columnas y filas inicializadas para desp popularlas
+    for (int i = 0; i < n; i++) {
+        dp[0][i] = matrix[0][i];
+        dp[i][0] = matrix[i][0];
+        if (matrix[i][0] == 1)
+            CuadradoMaximo = 1;
+    }
+
+    // para llenar la matriz
+    for (int i = 1; i < n; i++) {
+        for (int j = 1; j < n; j++) {
+            if (matrix[i][j] == 1) {
+                dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1;
+                if (dp[i][j] > CuadradoMaximo)
+                    CuadradoMaximo = dp[i][j];
+            } else {
+                dp[i][j] = 0;
+            }
+        }
+    }
+
+    return CuadradoMaximo;
+}
