@@ -40,3 +40,16 @@ int encuentraCuadradoMasGrande(int matrix[][MAX_SIZE], int n) {
 
     return CuadradoMaximo;
 }
+
+int main() {
+
+        // matriz con numeros aleatorios binarios
+    printf("Matriz generada:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            matrix[i][j] = rand() % 2; // 1s o 0s 
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
