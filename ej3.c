@@ -42,6 +42,14 @@ int encuentraCuadradoMasGrande(int matrix[][MAX_SIZE], int n) {
 }
 
 int main() {
+    int n;
+    printf("Ingrese el tamaño de la matriz (entre 1 y 10): ");
+    scanf("%d", &n);
+
+    if (n < MIN_SIZE || n > MAX_SIZE) {
+        printf("Entrada fuera de rango. Usando tamano prederterminado %d.\n", DEFAULT_SIZE);
+        n = DEFAULT_SIZE;
+    }
 
         // matriz con numeros aleatorios binarios
     printf("Matriz generada:\n");
